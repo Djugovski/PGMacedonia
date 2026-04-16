@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pgmacedonia.mk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk"/>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk"/>
+  </url>
+  <url><loc>https://pgmacedonia.mk/guiding</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/guiding</loc></url>
+  <url><loc>https://pgmacedonia.mk/tandem-ohrid</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/tandem-ohrid</loc></url>
+  <url><loc>https://pgmacedonia.mk/tandem-krusevo</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/tandem-krusevo</loc></url>
+  <url><loc>https://pgmacedonia.mk/gallery</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/gallery</loc></url>
+  <url><loc>https://pgmacedonia.mk/calendar</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/calendar</loc></url>
+  <url><loc>https://pgmacedonia.mk/faq</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/faq</loc></url>
+  <url><loc>https://pgmacedonia.mk/contact</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/contact</loc></url>
+  <url><loc>https://pgmacedonia.mk/booking/tandem</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/booking/tandem</loc></url>
+  <url><loc>https://pgmacedonia.mk/booking/guiding</loc></url>
+  <url><loc>https://pgmacedonia.mk/mk/booking/guiding</loc></url>
+</urlset>

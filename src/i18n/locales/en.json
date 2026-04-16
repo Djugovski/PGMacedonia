@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "defaultDescription": "Tandem paragliding in Ohrid and Krushevo, XC guiding and holidays in Macedonia. Certified pilots, lake and mountain flying.",
+    "homeTitle": "Paragliding tandem & XC guiding in Macedonia",
+    "guidingTitle": "XC guiding in Krushevo",
+    "guidingDesc": "Seven-day XC guiding in Krushevo: accommodation, briefings, retrieve, and coaching.",
+    "tandemOhridTitle": "Tandem flight Ohrid — Galicica",
+    "tandemOhridDesc": "Tandem paragliding over Ohrid and Prespa lakes from Galicica.",
+    "tandemKrusevoTitle": "Tandem flight Krushevo",
+    "tandemKrusevoDesc": "Tandem paragliding in Krushevo above forests and valleys from Meckin Kamen.",
+    "galleryTitle": "Gallery",
+    "galleryDesc": "Photos from tandem flights and XC guiding in Macedonia.",
+    "bookingTandemTitle": "Book a tandem flight",
+    "bookingGuidingTitle": "Guiding group inquiry",
+    "calendarTitle": "Calendar & booking",
+    "calendarDesc": "Accommodation and guiding calendar for PG Macedonia.",
+    "contactTitle": "Contact",
+    "confirmTitle": "Booking confirmation",
+    "faqTitle": "FAQ — Paragliding in Macedonia",
+    "faqDesc": "Answers about tandem paragliding in Ohrid and Krushevo, XC guiding, safety, and booking."
+  },
+  "nav": {
+    "home": "Home",
+    "tandemOhrid": "Tandem Ohrid",
+    "tandemKrusevo": "Tandem Krushevo",
+    "guiding": "Guiding",
+    "gallery": "Gallery",
+    "calendar": "Calendar",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "langMk": "MK",
+    "langEn": "EN",
+    "language": "Language"
+  },
+  "footer": {
+    "tagline": "Tandem flights and XC guiding in Ohrid & Krushevo, Macedonia.",
+    "contact": "Contact",
+    "follow": "Follow",
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "kicker": "Macedonia",
+    "title": "The dream of flying has never been closer",
+    "lead": "Tandem flights over Ohrid & Krushevo and world-class XC guiding — fly first class with us.",
+    "ctaTandem": "Tandem flights",
+    "ctaGuiding": "XC guiding",
+    "ctaContact": "Contact",
+    "sectionTitle": "Discover Macedonia from the sky",
+    "sectionLead": "Fly first class with certified tandem pilots and experienced XC guides.",
+    "cardOhridTitle": "Tandem — Ohrid",
+    "cardOhridText": "Galicica National Park: lake views, morning and longer flights. Packages from 65 €.",
+    "cardKrusevoTitle": "Tandem — Krushevo",
+    "cardKrusevoText": "Forests, valleys, and Meckin Kamen — one of the most visited take-offs in the region.",
+    "cardGuidingTitle": "XC guiding",
+    "cardGuidingText": "Week-long coaching in reliable conditions: briefings, retrieve, and evening debriefs.",
+    "cardCta": "Discover",
+    "cardGuidingCta": "Read more",
+    "galleryBtn": "Gallery",
+    "galleryPreviewTitle": "From the gallery",
+    "mapTitle": "Visit our base",
+    "mapLead": "We operate from Krushevo — a world-class XC hub and the perfect base for tandem flights and guiding in the region.",
+    "mapAddressLine1": "Krushevo, Pelagonia region",
+    "mapAddressLine2": "North Macedonia",
+    "mapCoordsLabel": "Coordinates",
+    "mapOpenExternal": "Open in Google Maps",
+    "mapIframeTitle": "Map of PG Macedonia base in Krushevo"
+  },
+  "forms": {
+    "name": "Name",
+    "email": "E-mail",
+    "subject": "Subject",
+    "message": "Message",
+    "phone": "Phone",
+    "captchaHint": "Anti-spam check",
+    "send": "Send message",
+    "sendBooking": "Send booking request",
+    "sendEnquiry": "Send enquiry",
+    "sendRequest": "Request dates",
+    "captchaWrong": "Please solve the math question correctly.",
+    "thanks": "Thank you — we will get back to you shortly.",
+    "thanksBooking": "Request sent. We will confirm by phone or email.",
+    "errorGeneric": "Something went wrong. Please try again or call us.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "numberOfPeople": "Number of people / pilots",
+    "needAccommodation": "Need accommodation?",
+    "accommodationYes": "Yes",
+    "accommodationNo": "No",
+    "optional": "optional",
+    "arrivalDate": "Arrival date (optional)",
+    "departureDate": "Departure date (optional)",
+    "program": "Program / place",
+    "preferredDate": "Preferred date",
+    "persons": "Number of people",
+    "residence": "Residence / hotel",
+    "messageOptional": "Message (optional)",
+    "travelStart": "Travel start (optional)",
+    "travelEnd": "Travel end (optional)"
+  },
+  "calendar": {
+    "heroTitle": "Calendar & booking",
+    "heroSubtitle": "Guiding weeks and accommodation fill up early — pick dates, send a request, and the owner approves to reserve.",
+    "legendAvailable": "Available",
+    "legendBooked": "Booked / confirmed",
+    "legendUnavailable": "Unavailable",
+    "legendSelected": "Your selection",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month",
+    "clear": "Clear selection",
+    "instruction": "Click check-in, then check-out to select a range (inclusive).",
+    "overlapError": "Selection includes unavailable or already booked days.",
+    "loadError": "Could not load calendar.",
+    "payTitle": "Pay with card",
+    "payText": "If you were sent a payment link for a deposit or balance, use the same Stripe checkout as on the current site.",
+    "payBtn": "Pay now",
+    "phoneTitle": "Book by phone",
+    "formTitle": "Reservation request",
+    "formLead": "Select your stay on the calendar, then complete the form. You will receive an email when the owner approves.",
+    "submitCalendar": "Send date request",
+    "calendarSuccess": "Request sent. Check your email after the owner approves.",
+    "calendarError": "Could not send request."
+  },
+  "confirm": {
+    "title": "Confirming your booking",
+    "missing": "Missing confirmation token.",
+    "success": "Booking confirmed. The calendar has been updated.",
+    "fail": "Could not confirm this link. It may have expired or already been used.",
+    "home": "Back home"
+  },
+  "contact": {
+    "heroTitle": "Contact us",
+    "heroSubtitle": "Call, WhatsApp, or send a message — we respond as soon as we can.",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp / Viber",
+    "whatsappOpen": "Open",
+    "map": "Open map",
+    "mapNote": "— Krushevo area (coordinates from current site).",
+    "formHeading": "Send us a message"
+  },
+  "guiding": {
+    "whyTitle": "Why Krushevo",
+    "whyLead": "Krushevo is one of the best and most reliable places on the planet to improve your paragliding skills.",
+    "whyBody": "The area has hosted World Cups, European Championships, and the 2019 World Championship — with maximum flyable days.",
+    "bullet1": "Predictable weather with almost no strong winds",
+    "bullet2": "Safe take-offs and landings across the valley",
+    "bullet3": "Easy retrieve thanks to villages and road access",
+    "includesTitle": "What the package includes",
+    "includes1": "Accommodation + breakfast (Villa Marija)",
+    "includes2": "Lunch package",
+    "includes3": "Airport transfers on request",
+    "includes4": "Transport & retrieve during the tour",
+    "includes5": "24/7 support and guidance",
+    "finePrint": "Lunch and dinner outside the package are not included. You need valid equipment, insurance with medical repatriation, and a radio. Typical duration: 7 days. Price: 700 € per person (minimum 4 pilots in group) — confirm current season pricing when you book.",
+    "calendarBtn": "Calendar & booking",
+    "call": "Call",
+    "enquireTitle": "Enquire about guiding"
+  },
+  "tandemOhrid": {
+    "heroTitle": "Tandem flight — Ohrid",
+    "heroSubtitle": "Fly above Galicica: Ohrid Lake on one side, Prespa on the other.",
+    "intro": "If you are staying in Ohrid, a tandem from the mountain near the lake is an unforgettable perspective on the national park. Certified pilots, transport from your hotel (or agreed meeting point), and photos & videos included in the packages below. National park entrance (about 5 €) applies.",
+    "bookEnquire": "Book / enquire",
+    "meeting": "Meeting point option:",
+    "earlyName": "Early Bird",
+    "earlyPrice": "65 €",
+    "earlyNote": "Shorter flight (about 4–7 minutes), morning window 8–10 AM, medium altitude difference.",
+    "expName": "Experience",
+    "expPrice": "85 €",
+    "expNote": "About 5–15 minutes, medium altitude difference. Pick-up in Ohrid or meet at Voena plaza.",
+    "xcName": "Cross country",
+    "xcPrice": "from 95 €",
+    "xcNote": "Longer flights when conditions allow — large altitude difference."
+  },
+  "tandemKrusevo": {
+    "heroTitle": "Tandem flight — Krushevo",
+    "heroSubtitle": "Nature, forests, and valleys — different from city flying. Meckin Kamen is minutes from the town centre.",
+    "p1": "Have you ever dreamed of flying like a bird? In Krushevo you fly above forests and valleys instead of over urban sprawl. The area known as Meckin Kamen is one of the most visited take-off sites in the region.",
+    "p2": "From 79 € per person for a typical 10–15 minute flight. In good thermals, your pilot may offer a longer line and landing further down the valley — ground crew will pick you up. Extended option is typically +20 € (confirm on the day).",
+    "p3": "Wear hiking boots or supportive shoes and sunglasses; we provide the rest. You can bring a lunch pack or join the team for a meal if everyone agrees.",
+    "alert": "After you submit a reservation, please also reach us on WhatsApp / Viber so we can confirm weather and time.",
+    "bookBtn": "Book now — 79 €"
+  },
+  "gallery": {
+    "empty": "No images configured yet.",
+    "close": "Close",
+    "lightboxPrev": "Previous image",
+    "lightboxNext": "Next image",
+    "lightboxCounter": "{n} of {total}",
+    "stripScrollPrev": "Previous photos",
+    "stripScrollNext": "Next photos"
+  },
+  "bookingTandem": {
+    "heroTitle": "Book your tandem flight",
+    "heroSubtitle": "We confirm by email or phone once we receive your request."
+  },
+  "bookingGuiding": {
+    "heroTitle": "Guiding inquiry",
+    "heroSubtitle": "Tell us your dates, group size, and experience level. We will reply with availability and next steps."
+  },
+  "team": {
+    "title": "Our team",
+    "lead": "Certified pilots and instructors with decades of experience in Macedonian skies.",
+    "since": "Flying since {year}",
+    "pilots": [
+      {
+        "name": "Stefan Djugovski",
+        "role": "Professional tandem pilot & XC guide",
+        "since": "1996",
+        "bio": "Best tandem pilot in Macedonia.",
+        "avatar": "/gallery/pilots/pece.jpg"
+      },
+      {
+        "name": "Stefan Djugovski",
+        "role": "Professional tandem pilot & XC guide",
+        "since": "1996",
+        "bio": "Best tandem pilot in Macedonia.",
+        "avatar": "/gallery/pilots/pece.jpg"
+      },
+      {
+        "name": "Stefan Djugovski",
+        "role": "Professional tandem pilot & XC guide",
+        "since": "1996",
+        "bio": "Best tandem pilot in Macedonia.",
+        "avatar": "/gallery/pilots/pece.jpg"
+      },
+      {
+        "name": "Stefan Djugovski",
+        "role": "Professional tandem pilot & XC guide",
+        "since": "1996",
+        "bio": "Best tandem pilot in Macedonia.",
+        "avatar": "/gallery/pilots/pece.jpg"
+      },
+      {
+        "name": "Stefan Djugovski",
+        "role": "Professional tandem pilot & XC guide",
+        "since": "1996",
+        "bio": "Best tandem pilot in Macedonia.",
+        "avatar": "/gallery/pilots/pece.jpg"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Common questions",
+    "sectionLead": "Quick answers about tandem flights and XC guiding in Macedonia.",
+    "viewAll": "View all questions",
+    "items": [
+      {
+        "q": "Where can I fly tandem in Macedonia?",
+        "a": "We offer tandem paragliding from Galicica above Ohrid Lake and from Meckin Kamen near Krushevo — two of the country’s best-known flying sites with lake, mountain, and valley views."
+      },
+      {
+        "q": "Do I need experience for a tandem flight?",
+        "a": "No. You fly with a certified tandem pilot who controls the wing. You receive a short briefing before take-off."
+      },
+      {
+        "q": "Is paragliding in Macedonia safe?",
+        "a": "We fly only in suitable weather, use inspected equipment, and work with experienced instructors. Tandem passengers should follow the pilot’s instructions and declare relevant health conditions."
+      },
+      {
+        "q": "What is XC guiding in Krushevo?",
+        "a": "XC guiding is coaching for licensed pilots who want longer cross-country flights. Krushevo offers reliable conditions, briefings, retrieve, and debriefs — ideal for improving technique."
+      },
+      {
+        "q": "How do I book or check accommodation dates?",
+        "a": "Use the calendar to select check-in and check-out, send a request, and the operator will confirm by email. Confirmed stays appear as booked on the calendar."
+      },
+      {
+        "q": "Which airport should I use?",
+        "a": "Most guests use Skopje International Airport (SKP). Transfers from Ohrid or Thessaloniki can often be arranged — mention your plans in the contact form."
+      }
+    ]
+  }
+}
