@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 import { usePageMeta } from '@/composables/usePageMeta'
 import PageHero from '@/components/layout/PageHero.vue'
 import { siteConfig } from '@/config/site'
@@ -8,6 +9,11 @@ import { useLocalizedNames } from '@/composables/useLocalizedNames'
 
 const { t } = useI18n()
 const { ln } = useLocalizedNames()
+const router = useRouter()
+
+function goTo(target: { name: string; query?: Record<string, string> }) {
+  router.push(target)
+}
 
 usePageMeta({
   title: () => t('meta.tandemOhridTitle'),
@@ -49,7 +55,19 @@ const tiers = computed(() => [
       <v-row>
         <v-col v-for="tier in tiers" :key="tier.name" cols="12" md="4">
           <v-card class="h-100 d-flex flex-column" elevation="2">
-            <v-img :src="tier.image" :alt="tier.name" height="180" cover />
+            <v-img
+              :src="tier.image"
+              :alt="tier.name"
+              height="180"
+              cover
+              class="tandem-tier__img"
+              role="link"
+              tabindex="0"
+              :aria-label="tier.name"
+              @click="goTo(tier.booking)"
+              @keydown.enter.prevent="goTo(tier.booking)"
+              @keydown.space.prevent="goTo(tier.booking)"
+            />
             <v-card-title class="text-h6">{{ tier.name }}</v-card-title>
             <v-card-subtitle class="text-h6 text-primary">{{ tier.price }}</v-card-subtitle>
             <v-card-text class="flex-grow-1 text-body-2">{{ tier.note }}</v-card-text>
@@ -74,3 +92,18 @@ const tiers = computed(() => [
     </v-container>
   </div>
 </template>
+
+<style scoped>
+.tandem-tier__img {
+  cursor: pointer;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+.tandem-tier__img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+.tandem-tier__img:focus-visible {
+  outline: 3px solid rgb(var(--v-theme-primary));
+  outline-offset: 2px;
+}
+</style>

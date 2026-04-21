@@ -1,14 +1,51 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useHead } from '@unhead/vue'
 import { useLocalizedNames } from '@/composables/useLocalizedNames'
-import { galleryImages, resolveGallerySrc } from '@/content/gallery'
 
-const { t } = useI18n()
+interface HeroSlide {
+  title: string
+  lead: string
+  alt: string
+}
+
+const { t, tm, rt } = useI18n()
 const { ln } = useLocalizedNames()
 
-/** First hero slides = first gallery entries (full URLs from `gallery.ts`). */
-const slideImages = computed(() => galleryImages.slice(0, 4).map((img) => resolveGallerySrc(img)))
+const slideImages = [
+  '/gallery/Slider/Slide1.jpg',
+  '/gallery/Slider/Slide2.png',
+  '/gallery/Slider/Slide3.png',
+  '/gallery/Slider/Slide4.jpg',
+  '/gallery/Slider/Slide5.png',
+] as const
+
+const slides = computed(() => {
+  const raw = tm('home.slides') as unknown as HeroSlide[] | undefined
+  const content = Array.isArray(raw) ? raw : []
+  return slideImages.map((src, i) => {
+    const entry = content[i] ?? content[0] ?? ({} as HeroSlide)
+    return {
+      src,
+      title: entry.title ? rt(entry.title) : t('home.title'),
+      lead: entry.lead ? rt(entry.lead) : t('home.lead'),
+      alt: entry.alt ? rt(entry.alt) : t('home.title'),
+    }
+  })
+})
+
+// Preload the LCP (first slide) image for better Core Web Vitals / SEO
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      href: slideImages[0],
+      fetchpriority: 'high',
+    },
+  ],
+})
 </script>
 
 <template>
@@ -23,20 +60,29 @@ const slideImages = computed(() => galleryImages.slice(0, 4).map((img) => resolv
       class="home-hero-carousel__root"
       hide-delimiter-background
     >
-      <v-carousel-item v-for="(src, i) in slideImages" :key="i">
+      <v-carousel-item v-for="(slide, i) in slides" :key="i">
         <div class="home-hero-carousel__slide">
-          <v-img class="home-hero-carousel__bg" :src="src" alt="" cover />
+          <v-img
+            class="home-hero-carousel__bg"
+            :src="slide.src"
+            :alt="slide.alt"
+            :eager="i === 0"
+            cover
+          />
           <div class="home-hero-carousel__scrim" />
           <div class="home-hero-carousel__content pa-5 pa-sm-8 pa-md-16 pg-hero-rise">
             <p class="text-overline text-white text-opacity-90 mb-2">{{ t('home.kicker') }}</p>
-            <h1 class="text-h3 text-md-h2 font-weight-bold mb-4">
-              {{ t('home.title') }}
-            </h1>
+            <component
+              :is="i === 0 ? 'h1' : 'p'"
+              class="text-h3 text-md-h2 font-weight-bold mb-4"
+            >
+              {{ slide.title }}
+            </component>
             <p class="text-h6 text-md-h5 font-weight-regular mb-8 home-hero-carousel__lead">
-              {{ t('home.lead') }}
+              {{ slide.lead }}
             </p>
             <div class="d-flex flex-column flex-sm-row flex-wrap ga-3">
-              <v-btn :to="{ name: ln('tandem-ohrid') }" color="accent" size="large" variant="flat">
+              <v-btn :to="{ name: ln('tandem') }" color="accent" size="large" variant="flat">
                 {{ t('home.ctaTandem') }}
               </v-btn>
               <v-btn :to="{ name: ln('guiding') }" color="white" size="large" variant="outlined">

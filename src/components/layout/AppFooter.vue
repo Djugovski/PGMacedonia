@@ -65,9 +65,23 @@ const { ln } = useLocalizedNames()
         </v-col>
       </v-row>
       <v-divider class="my-4" />
-      <div class="text-caption text-medium-emphasis text-center">
-        © {{ new Date().getFullYear() }} {{ siteConfig.name }}. {{ t('footer.rights') }}
+      <div class="text-caption text-medium-emphasis text-center pg-footer-copyright">
+        <div>
+          © {{ new Date().getFullYear() }} {{ siteConfig.name }}. {{ t('footer.rights') }}
+        </div>
+        <div class="mt-1">
+          {{ t('footer.legal', { name: siteConfig.legalName }) }}
+        </div>
+        <div class="mt-1">
+          {{ t('footer.imageryCredit', { name: siteConfig.name }) }}
+        </div>
       </div>
     </v-container>
   </v-footer>
 </template>
+
+<style scoped>
+.pg-footer-copyright {
+  line-height: 1.55;
+}
+</style>

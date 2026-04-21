@@ -40,13 +40,7 @@ const whyBullets = [
   { icon: 'mdi-map-marker-path', key: 'guiding.bullet3' },
 ] as const
 
-const includes = [
-  { icon: 'mdi-bed', key: 'guiding.includes1' },
-  { icon: 'mdi-food-apple', key: 'guiding.includes2' },
-  { icon: 'mdi-airplane', key: 'guiding.includes3' },
-  { icon: 'mdi-van-utility', key: 'guiding.includes4' },
-  { icon: 'mdi-headset', key: 'guiding.includes5' },
-] as const
+const VILLA_MARIJA_FB = 'https://www.facebook.com/vilamarijakrushevo'
 
 const whereSites = [
   { icon: 'mdi-flag', key: 'guiding.where1' },
@@ -65,6 +59,12 @@ const priceFacts = [
   { icon: 'mdi-calendar-range', value: 'guiding.priceDuration', label: 'guiding.priceDurationLabel' },
   { icon: 'mdi-currency-eur', value: 'guiding.pricePrice', label: 'guiding.pricePriceLabel' },
   { icon: 'mdi-account-group', value: 'guiding.priceGroup', label: 'guiding.priceGroupLabel' },
+] as const
+
+const afterItems = [
+  { icon: 'mdi-silverware-fork-knife', key: 'guiding.afterFood' },
+  { icon: 'mdi-coffee', key: 'guiding.afterCafe' },
+  { icon: 'mdi-castle', key: 'guiding.afterCulture' },
 ] as const
 </script>
 
@@ -154,11 +154,21 @@ const priceFacts = [
                 {{ t('guiding.includesTitle') }}
               </h3>
               <v-list density="compact" class="pa-0 bg-transparent">
-                <v-list-item v-for="inc in includes" :key="inc.key" class="px-0">
+                <v-list-item class="px-0">
                   <template #prepend>
-                    <v-icon :icon="inc.icon" size="20" class="text-primary me-2" />
+                    <v-icon icon="mdi-bed" size="20" class="text-primary me-2" />
                   </template>
-                  <v-list-item-title class="text-body-2 text-wrap">{{ t(inc.key) }}</v-list-item-title>
+                  <v-list-item-title class="text-body-2 text-wrap">
+                    {{ t('guiding.includes1') }}
+                    <a
+                      :href="VILLA_MARIJA_FB"
+                      target="_blank"
+                      rel="noopener"
+                      class="guiding-villa-link"
+                    >
+                      <v-icon size="16" class="me-1">mdi-facebook</v-icon>{{ t('guiding.villaFbLabel') }}
+                    </a>
+                  </v-list-item-title>
                 </v-list-item>
               </v-list>
             </v-card>
@@ -206,6 +216,33 @@ const priceFacts = [
           </p>
         </div>
       </RevealOnView>
+
+      <!-- Beyond the sky — Krushevo as a holiday destination -->
+      <RevealOnView class="mt-14">
+        <div class="mx-auto text-center" style="max-width: 54rem">
+          <h2 class="text-h4 font-weight-bold mb-2 pg-reveal-item" style="--reveal-delay: 0ms">
+            {{ t('guiding.afterTitle') }}
+          </h2>
+          <p class="text-body-1 text-medium-emphasis pg-reveal-item" style="--reveal-delay: 60ms">
+            {{ t('guiding.afterLead') }}
+          </p>
+        </div>
+        <v-row class="mt-6">
+          <v-col
+            v-for="(a, i) in afterItems"
+            :key="a.key"
+            cols="12"
+            md="4"
+            class="pg-reveal-item"
+            :style="{ '--reveal-delay': `${120 + i * 80}ms` }"
+          >
+            <v-card class="h-100 pa-5 d-flex flex-column align-start pg-surface-lift" elevation="1" rounded="lg">
+              <v-icon :icon="a.icon" size="32" class="mb-3 text-primary" />
+              <p class="text-body-1 font-weight-medium mb-0">{{ t(a.key) }}</p>
+            </v-card>
+          </v-col>
+        </v-row>
+      </RevealOnView>
     </v-container>
 
     <!-- Calendar + reservation + pay/call (anchor target) -->
@@ -235,26 +272,6 @@ const priceFacts = [
                   {{ t('calendar.formLead') }}
                 </p>
                 <CalendarReservationForm :start="range.start" :end="range.end" />
-              </v-card>
-
-              <v-card elevation="1" class="pa-4 mt-4" rounded="lg">
-                <h3 class="text-h6 mb-2 d-flex align-center">
-                  <v-icon start class="text-primary">mdi-credit-card-outline</v-icon>
-                  {{ t('calendar.payTitle') }}
-                </h3>
-                <p class="text-body-2 text-medium-emphasis mb-4">
-                  {{ t('calendar.payText') }}
-                </p>
-                <v-btn
-                  :href="siteConfig.stripePayUrl"
-                  target="_blank"
-                  rel="noopener"
-                  color="primary"
-                  size="large"
-                  block
-                >
-                  {{ t('calendar.payBtn') }}
-                </v-btn>
               </v-card>
 
               <v-card elevation="1" class="pa-4 mt-4" rounded="lg">
@@ -374,6 +391,23 @@ const priceFacts = [
 /* Booking band: soft sky wash to separate from the rest of the page */
 .guiding-enquire {
   scroll-margin-top: 80px;
+}
+
+.guiding-villa-link {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.4rem;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(24, 119, 242, 0.12);
+  color: #1877f2;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.guiding-villa-link:hover {
+  background: rgba(24, 119, 242, 0.2);
 }
 
 .guiding-book {

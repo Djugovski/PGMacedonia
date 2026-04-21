@@ -80,7 +80,8 @@ const pilots = tm('team.pilots') as unknown as Pilot[]
 
 @media (min-width: 960px) {
   .home-team__grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 880px;
   }
 }
 

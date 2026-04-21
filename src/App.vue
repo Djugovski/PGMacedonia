@@ -2,6 +2,7 @@
 import { RouterView, useRoute } from 'vue-router'
 import AppHeader from '@/components/layout/AppHeader.vue'
 import AppFooter from '@/components/layout/AppFooter.vue'
+import FloatingSocial from '@/components/layout/FloatingSocial.vue'
 import { useSiteWideJsonLd } from '@/composables/useStructuredData'
 
 useSiteWideJsonLd()
@@ -19,5 +20,6 @@ const route = useRoute()
       </RouterView>
     </v-main>
     <AppFooter />
+    <FloatingSocial />
   </v-app>
 </template>

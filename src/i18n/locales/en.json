@@ -50,12 +50,41 @@
     "paraglidingOhrid": "Paragliding in Ohrid",
     "paraglidingKrushevo": "Paragliding in Krushevo",
     "paraglidingSeason": "Paragliding season in Macedonia",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "legal": "{name} — registered paragliding operator in North Macedonia.",
+    "imageryCredit": "Website content, photography and video © {name} unless otherwise credited."
   },
   "home": {
     "kicker": "Macedonia",
     "title": "The dream of flying has never been closer",
     "lead": "Tandem flights over Ohrid & Krushevo and world-class XC guiding — fly first class with us.",
+    "slides": [
+      {
+        "title": "The dream of flying has never been closer",
+        "lead": "Tandem flights over Ohrid & Krushevo and world-class XC guiding — fly first class with us.",
+        "alt": "Paraglider soaring above North Macedonia — PG Macedonia tandem flight"
+      },
+      {
+        "title": "Fly above Ohrid Lake",
+        "lead": "Tandem paragliding from Galicica with certified pilots — no experience required.",
+        "alt": "Tandem paragliding above Ohrid Lake from Galicica, North Macedonia"
+      },
+      {
+        "title": "Chase thermals over Krushevo",
+        "lead": "The highest town in the Balkans and a world-class XC paragliding base.",
+        "alt": "XC paragliding launch at Meckin Kamen, Krushevo, Macedonia"
+      },
+      {
+        "title": "See Macedonia from the sky",
+        "lead": "Lakes, mountains and valleys in every flight — fly first class with us.",
+        "alt": "Aerial view of Macedonian mountains and valleys from a paraglider"
+      },
+      {
+        "title": "Your flight is waiting",
+        "lead": "Book a tandem or a guiding week — we handle weather, briefings and retrieve.",
+        "alt": "Paraglider at golden hour over Krushevo, Macedonia"
+      }
+    ],
     "ctaTandem": "Tandem flights",
     "ctaGuiding": "XC guiding",
     "ctaContact": "Contact",
@@ -63,10 +92,13 @@
     "sectionLead": "Fly first class with certified tandem pilots and experienced XC guides.",
     "cardOhridTitle": "Tandem — Ohrid",
     "cardOhridText": "Galicica National Park: lake views, morning and longer flights. Packages from 65 €.",
+    "cardOhridAlt": "Tandem paragliding above Ohrid Lake from Galicica — PG Macedonia",
     "cardKrusevoTitle": "Tandem — Krushevo",
     "cardKrusevoText": "Forests, valleys, and Meckin Kamen — one of the most visited take-offs in the region.",
+    "cardKrusevoAlt": "Tandem paragliding over Krushevo forests and valleys from Meckin Kamen",
     "cardGuidingTitle": "XC guiding",
     "cardGuidingText": "Week-long coaching in reliable conditions: briefings, retrieve, and evening debriefs.",
+    "cardGuidingAlt": "XC paragliding guiding in Krushevo, Macedonia — cross-country coaching",
     "cardCta": "Discover",
     "cardGuidingCta": "Read more",
     "galleryBtn": "Gallery",
@@ -127,9 +159,6 @@
     "instruction": "Click check-in, then check-out to select a range (inclusive).",
     "overlapError": "Selection includes unavailable or already booked days.",
     "loadError": "Could not load calendar.",
-    "payTitle": "Pay with card",
-    "payText": "If you were sent a payment link for a deposit or balance, use the same Stripe checkout as on the current site.",
-    "payBtn": "Pay now",
     "phoneTitle": "Book by phone",
     "formTitle": "Reservation request",
     "formLead": "Select your stay on the calendar, then complete the form. You will receive an email when the owner approves.",
@@ -156,21 +185,22 @@
     "formHeading": "Send us a message"
   },
   "guiding": {
-    "heroSubtitle": "Seven-day XC coaching in Krushevo — reliable conditions, briefings, retrieve, and accommodation in one package.",
-    "whyTitle": "Why Krushevo",
-    "whyLead": "Krushevo is one of the best and most reliable places on the planet to improve your paragliding skills.",
-    "whyBody": "The area has hosted World Cups, European Championships, and the 2019 World Championship — with maximum flyable days.",
-    "bullet1": "Predictable weather with almost no strong winds",
-    "bullet2": "Safe take-offs and landings across the valley",
-    "bullet3": "Easy retrieve thanks to villages and road access",
+    "heroSubtitle": "Fly above the flatlands of Macedonia. Seven days of XC flying from Krushevo — the highest town in the Balkans (1,350 m).",
+    "whyTitle": "Why fly in Krushevo",
+    "whyLead": "Krushevo sits at 1,350 m — the highest town in the Balkans. Here flatlands meet mountains, which makes it a great place to learn thermals and long XC flights.",
+    "whyBody": "The two main take-offs face east and west, so we can fly on most days, no matter the wind. Good asphalt roads go all the way up to the grass launches, so access is easy for every pilot. Krushevo has hosted the Paragliding World Cup and World and European Championships — the conditions really are that good.",
+    "bullet1": "Mixed terrain — flatlands and mountains in the same flight",
+    "bullet2": "Two take-offs (east and west) with easy road access",
+    "bullet3": "A well-known XC spot — host of the Paragliding World Cup",
     "whereTitle": "Where we fly",
-    "whereLead": "Our main flying area is Krushevo. Depending on weather, we run excursions to other world-class sites.",
-    "where1": "Krushevo — Meckin Kamen, main take-off",
-    "where2": "Treskavec — classic mountain launch",
-    "where3": "Sliva — alternative site for varied conditions",
-    "where4": "Ohrid — Galicica lakeside flying",
+    "whereLead": "Krushevo is our base. If the weather is better somewhere else, we drive to other top sites so you always fly the best option of the day.",
+    "where1": "Krushevo — Meckin Kamen, the main east/west take-off",
+    "where2": "Treskavec — mountain launch for longer flights",
+    "where3": "Sliva — backup site for changing weather",
+    "where4": "Ohrid — lake flying from Galicica on rest days",
     "includesTitle": "What the package includes",
-    "includes1": "Accommodation + breakfast (Villa Marija)",
+    "includes1": "Accommodation + breakfast at Villa Marija",
+    "villaFbLabel": "Villa Marija on Facebook",
     "includes2": "Lunch package",
     "includes3": "Airport transfers on request",
     "includes4": "Transport & retrieve during the tour",
@@ -187,13 +217,18 @@
     "priceGroup": "Min. 4 pilots",
     "priceGroupLabel": "Group size",
     "priceNote": "Lunch and dinner outside the package are not included. Confirm current season pricing when you book.",
+    "afterTitle": "More than flying — a great place to relax",
+    "afterLead": "After a long day in the air, Krushevo is a nice place to rest. The town has many small restaurants, cafés and bars where pilots meet, share stories and enjoy Macedonian food and hospitality.",
+    "afterFood": "Local food and family restaurants close to the landing field",
+    "afterCafe": "Cafés and bars with a panoramic view — a good spot to talk about the flight",
+    "afterCulture": "The highest town in the Balkans — with a long history and lots of character",
     "bookTitle": "Book your guiding week",
-    "bookLead": "Pick check-in and check-out on the calendar below, then send a request. You will receive an email once the owner approves.",
+    "bookLead": "Pick check-in and check-out on the calendar below, then send a request. You will get an email once the owner confirms.",
     "calendarBtn": "Book Dates",
     "enquireBtn": "Enquire",
     "call": "Call",
-    "enquireTitle": "Enquire about guiding",
-    "enquireLead": "Not sure about dates? Send a message and we will reply with availability and next steps."
+    "enquireTitle": "Ask about guiding",
+    "enquireLead": "Not sure about dates? Send us a message and we will reply with free dates, prices and all the info you need."
   },
   "tandem": {
     "heroTitle": "Discover Macedonia from the sky",
@@ -270,38 +305,24 @@
     "pilots": [
       {
         "name": "Stefan Djugovski",
-        "role": "Professional tandem pilot & XC guide",
-        "since": "1996",
-        "bio": "Best tandem pilot in Macedonia.",
-        "avatar": "/gallery/pilots/pece.jpg"
+        "role": "Paragliding Instructor & Paragliding Tandem Pilot",
+        "since": "1995",
+        "bio": "Certified instructor and tandem pilot with three decades of flying in Macedonian skies.",
+        "avatar": "/gallery/pilots/stefan.jpg"
       },
       {
-        "name": "Stefan Djugovski",
-        "role": "Professional tandem pilot & XC guide",
-        "since": "1996",
-        "bio": "Best tandem pilot in Macedonia.",
-        "avatar": "/gallery/pilots/pece.jpg"
+        "name": "Darko Djugovski",
+        "role": "Paragliding Tandem Pilot",
+        "since": "1994",
+        "bio": "Experienced tandem pilot flying the Balkan ridges since 1994.",
+        "avatar": "/gallery/pilots/darko.jpg"
       },
       {
-        "name": "Stefan Djugovski",
-        "role": "Professional tandem pilot & XC guide",
-        "since": "1996",
-        "bio": "Best tandem pilot in Macedonia.",
-        "avatar": "/gallery/pilots/pece.jpg"
-      },
-      {
-        "name": "Stefan Djugovski",
-        "role": "Professional tandem pilot & XC guide",
-        "since": "1996",
-        "bio": "Best tandem pilot in Macedonia.",
-        "avatar": "/gallery/pilots/pece.jpg"
-      },
-      {
-        "name": "Stefan Djugovski",
-        "role": "Professional tandem pilot & XC guide",
-        "since": "1996",
-        "bio": "Best tandem pilot in Macedonia.",
-        "avatar": "/gallery/pilots/pece.jpg"
+        "name": "Sasho Petar Stojanovski",
+        "role": "Professional Tandem Pilot & Skydiving Master",
+        "since": "whole life",
+        "bio": "Lifelong aviator — professional tandem pilot and skydiving master.",
+        "avatar": "/gallery/pilots/petar.jpg"
       }
     ]
   },
