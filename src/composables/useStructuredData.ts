@@ -40,6 +40,44 @@ export function useSiteWideJsonLd() {
         },
         sameAs,
         priceRange: '€€',
+        areaServed: [
+          { '@type': 'Country', name: 'North Macedonia' },
+          { '@type': 'AdministrativeArea', name: 'Ohrid' },
+          { '@type': 'AdministrativeArea', name: 'Krushevo' },
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Paragliding services in Macedonia',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Tandem paragliding Ohrid',
+                areaServed: 'Ohrid, North Macedonia',
+                url: absUrl('/tandem-ohrid'),
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Tandem paragliding Krushevo',
+                areaServed: 'Krushevo, North Macedonia',
+                url: absUrl('/tandem-krusevo'),
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'XC guiding in Krushevo',
+                areaServed: 'Krushevo, North Macedonia',
+                url: absUrl('/guiding'),
+              },
+            },
+          ],
+        },
       }
       if (siteConfig.defaultOgImage) {
         business.image = siteConfig.defaultOgImage

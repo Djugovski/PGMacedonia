@@ -61,16 +61,21 @@ export function usePageMeta(opts: {
   const metaEntries = computed(() => {
     const list: { name?: string; property?: string; content: string }[] = [
       { name: 'description', content: description.value },
+      { name: 'robots', content: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' },
       { property: 'og:title', content: fullTitle.value },
       { property: 'og:description', content: description.value },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: canonicalHref.value },
       { property: 'og:site_name', content: siteConfig.name },
       { property: 'og:locale', content: ogLocale.value },
+      { property: 'og:locale:alternate', content: ogLocale.value === 'mk_MK' ? 'en_GB' : 'mk_MK' },
+      { name: 'twitter:title', content: fullTitle.value },
+      { name: 'twitter:description', content: description.value },
     ]
     if (siteConfig.defaultOgImage) {
       list.push(
         { property: 'og:image', content: siteConfig.defaultOgImage },
+        { property: 'og:image:alt', content: `${siteConfig.name} — Paragliding in Macedonia` },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:image', content: siteConfig.defaultOgImage },
       )
@@ -80,6 +85,28 @@ export function usePageMeta(opts: {
     return list
   })
 
+  const scriptEntries = computed(() => [
+    {
+      key: 'jsonld-webpage',
+      type: 'application/ld+json',
+      textContent: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        '@id': `${canonicalHref.value}#webpage`,
+        url: canonicalHref.value,
+        name: fullTitle.value,
+        description: description.value,
+        inLanguage: locale.value === 'mk' ? 'mk' : 'en',
+        isPartOf: { '@id': `${origin.value}/#website` },
+        about: [
+          { '@type': 'Thing', name: 'Paragliding in Macedonia' },
+          { '@type': 'Thing', name: 'Tandem paragliding' },
+          { '@type': 'Thing', name: 'XC guiding' },
+        ],
+      }),
+    },
+  ])
+
   useHead({
     title: fullTitle,
     htmlAttrs: {
@@ -87,5 +114,6 @@ export function usePageMeta(opts: {
     },
     meta: metaEntries,
     link,
+    script: scriptEntries,
   })
 }

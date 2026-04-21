@@ -1,0 +1,27 @@
+# PG Macedonia
+
+PG Macedonia is a paragliding operator in North Macedonia offering tandem flights in Ohrid and Krushevo plus XC guiding.
+
+Primary site:
+- https://pgmacedonia.mk/
+
+Important pages:
+- https://pgmacedonia.mk/paragliding-macedonia
+- https://pgmacedonia.mk/paragliding-ohrid
+- https://pgmacedonia.mk/paragliding-krusevo
+- https://pgmacedonia.mk/paragliding-season-macedonia
+- https://pgmacedonia.mk/tandem
+- https://pgmacedonia.mk/tandem-ohrid
+- https://pgmacedonia.mk/tandem-krusevo
+- https://pgmacedonia.mk/guiding
+- https://pgmacedonia.mk/faq
+- https://pgmacedonia.mk/contact
+
+Language variants:
+- English: default routes without `/mk`
+- Macedonian: mirrored routes under `/mk`
+
+Organization:
+- Name: Helix Paragliding / PG Macedonia
+- Phone: +389 71 261 398
+- Email: contact@pgmacedonia.com

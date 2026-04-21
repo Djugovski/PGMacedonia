@@ -46,5 +46,12 @@ usePageMeta({
       </RevealOnView>
     </v-container>
     <HomeMapSection />
+    <v-container class="pt-0 pb-14">
+      <div class="text-center">
+        <v-btn :to="{ name: ln('paragliding-macedonia') }" variant="text" color="primary">
+          {{ t('home.paraglidingMacedoniaLink') }}
+        </v-btn>
+      </div>
+    </v-container>
   </div>
 </template>

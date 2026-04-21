@@ -1,16 +1,27 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { usePageMeta } from '@/composables/usePageMeta'
 import PageHero from '@/components/layout/PageHero.vue'
 import ContactForm from '@/components/forms/ContactForm.vue'
 import { siteConfig } from '@/config/site'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 usePageMeta({
   title: () => t('meta.contactTitle'),
   description: () => t('meta.defaultDescription'),
 })
+
+const mapEmbedSrc = computed(() => {
+  const q = encodeURIComponent(siteConfig.mapQuery)
+  const hl = locale.value === 'mk' ? 'mk' : 'en'
+  return `https://maps.google.com/maps?q=${q}&z=16&hl=${hl}&output=embed`
+})
+
+const googleMapsHref = computed(
+  () => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.mapQuery)}`,
+)
 </script>
 
 <template>
@@ -43,15 +54,20 @@ usePageMeta({
           </v-list>
           <v-card variant="outlined" class="mt-4 pa-2">
             <v-card-text class="text-body-2">
-              <a
-                :href="`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.mapQuery)}`"
-                target="_blank"
-                rel="noopener"
-              >
+              <a :href="googleMapsHref" target="_blank" rel="noopener" class="contact-map__link">
                 {{ t('contact.map') }}
               </a>
-              {{ t('contact.mapNote') }}
             </v-card-text>
+            <div class="px-2 pb-2">
+              <iframe
+                class="contact-map__iframe"
+                :src="mapEmbedSrc"
+                :title="t('home.mapIframeTitle')"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              />
+            </div>
           </v-card>
         </v-col>
         <v-col cols="12" md="7">
@@ -64,3 +80,29 @@ usePageMeta({
     </v-container>
   </div>
 </template>
+
+<style scoped>
+.contact-map__iframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.contact-map__link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.68rem;
+  border-radius: 999px;
+  background: rgba(var(--v-theme-primary), 0.12);
+  color: rgb(var(--v-theme-primary));
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.contact-map__link:hover {
+  background: rgba(var(--v-theme-primary), 0.2);
+}
+</style>

@@ -5,28 +5,168 @@
     <loc>https://pgmacedonia.mk/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/"/>
     <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/"/>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://pgmacedonia.mk/mk</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/"/>
     <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/"/>
+    <lastmod>2026-04-19</lastmod>
   </url>
-  <url><loc>https://pgmacedonia.mk/guiding</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/guiding</loc></url>
-  <url><loc>https://pgmacedonia.mk/tandem-ohrid</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/tandem-ohrid</loc></url>
-  <url><loc>https://pgmacedonia.mk/tandem-krusevo</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/tandem-krusevo</loc></url>
-  <url><loc>https://pgmacedonia.mk/gallery</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/gallery</loc></url>
-  <url><loc>https://pgmacedonia.mk/calendar</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/calendar</loc></url>
-  <url><loc>https://pgmacedonia.mk/faq</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/faq</loc></url>
-  <url><loc>https://pgmacedonia.mk/contact</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/contact</loc></url>
-  <url><loc>https://pgmacedonia.mk/booking/tandem</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/booking/tandem</loc></url>
-  <url><loc>https://pgmacedonia.mk/booking/guiding</loc></url>
-  <url><loc>https://pgmacedonia.mk/mk/booking/guiding</loc></url>
+  <url>
+    <loc>https://pgmacedonia.mk/guiding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/guiding"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/guiding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/guiding"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/guiding</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/guiding"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/guiding"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/guiding"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/tandem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/tandem"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/tandem"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/tandem"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/tandem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/tandem"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/tandem"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/tandem"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/tandem-ohrid</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/tandem-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/tandem-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/tandem-ohrid"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/tandem-ohrid</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/tandem-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/tandem-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/tandem-ohrid"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/tandem-krusevo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/tandem-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/tandem-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/tandem-krusevo"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/tandem-krusevo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/tandem-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/tandem-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/tandem-krusevo"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/paragliding-macedonia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-macedonia"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/paragliding-macedonia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-macedonia"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/paragliding-ohrid</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-ohrid"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/paragliding-ohrid</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-ohrid"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-ohrid"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/paragliding-krusevo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-krusevo"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/paragliding-krusevo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-krusevo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-krusevo"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/paragliding-season-macedonia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-season-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-season-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-season-macedonia"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/paragliding-season-macedonia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/paragliding-season-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/paragliding-season-macedonia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/paragliding-season-macedonia"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/gallery"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/gallery"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/gallery"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/gallery"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/faq"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/faq"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/faq"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/faq"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/contact"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/contact"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
+  <url>
+    <loc>https://pgmacedonia.mk/mk/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pgmacedonia.mk/contact"/>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://pgmacedonia.mk/mk/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pgmacedonia.mk/contact"/>
+    <lastmod>2026-04-19</lastmod>
+  </url>
 </urlset>

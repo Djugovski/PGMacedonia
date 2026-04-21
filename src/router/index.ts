@@ -16,6 +16,12 @@ const pages: RouteRecordRaw[] = [
     meta: { locale: 'en' },
   },
   {
+    path: '/tandem',
+    name: 'tandem',
+    component: () => import('@/views/TandemView.vue'),
+    meta: { locale: 'en' },
+  },
+  {
     path: '/tandem-ohrid',
     name: 'tandem-ohrid',
     component: () => import('@/views/TandemOhridView.vue'),
@@ -25,6 +31,30 @@ const pages: RouteRecordRaw[] = [
     path: '/tandem-krusevo',
     name: 'tandem-krusevo',
     component: () => import('@/views/TandemKrusevoView.vue'),
+    meta: { locale: 'en' },
+  },
+  {
+    path: '/paragliding-macedonia',
+    name: 'paragliding-macedonia',
+    component: () => import('@/views/ParaglidingMacedoniaView.vue'),
+    meta: { locale: 'en' },
+  },
+  {
+    path: '/paragliding-ohrid',
+    name: 'paragliding-ohrid',
+    component: () => import('@/views/ParaglidingOhridGuideView.vue'),
+    meta: { locale: 'en' },
+  },
+  {
+    path: '/paragliding-krusevo',
+    name: 'paragliding-krusevo',
+    component: () => import('@/views/ParaglidingKrushevoGuideView.vue'),
+    meta: { locale: 'en' },
+  },
+  {
+    path: '/paragliding-season-macedonia',
+    name: 'paragliding-season-macedonia',
+    component: () => import('@/views/ParaglidingSeasonMacedoniaView.vue'),
     meta: { locale: 'en' },
   },
   {
@@ -48,7 +78,10 @@ const pages: RouteRecordRaw[] = [
   {
     path: '/calendar',
     name: 'calendar',
-    component: () => import('@/views/CalendarView.vue'),
+    redirect: (to) => ({
+      name: to.meta.locale === 'mk' ? `guiding${MK_SUFFIX}` : 'guiding',
+      hash: '#calendar',
+    }),
     meta: { locale: 'en' },
   },
   {
@@ -84,7 +117,10 @@ function withMk(r: RouteRecordRaw): RouteRecordRaw {
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [...pages, ...pages.map(withMk)],
-  scrollBehavior() {
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { el: to.hash, top: 80, behavior: 'smooth' }
+    }
     return { top: 0 }
   },
 })

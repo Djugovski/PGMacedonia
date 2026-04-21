@@ -20,5 +20,5 @@ export const siteConfig = {
     import.meta.env.VITE_GALLERY_BASE_URL?.replace(/\/$/, '') ??
     'https://pgmacedonia.mk/wp-content/uploads',
   /** Optional absolute image URL for og:image + JSON-LD (set VITE_OG_IMAGE_URL in .env) */
-  defaultOgImage: import.meta.env.VITE_OG_IMAGE_URL?.trim() || '',
+  defaultOgImage: import.meta.env.VITE_OG_IMAGE_URL?.trim() || 'https://pgmacedonia.mk/logo.png',
 } as const

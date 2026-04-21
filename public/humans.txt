@@ -1,0 +1,17 @@
+/* TEAM */
+Organization: Helix Paragliding / PG Macedonia
+Website: https://pgmacedonia.mk
+Contact: contact@pgmacedonia.com
+Phone: +389 71 261 398
+
+/* SITE */
+Stack: Vue 3, Vuetify, TypeScript, Vite
+Content focus: Tandem paragliding in Ohrid and Krushevo, XC guiding in Macedonia
+Languages: English (default), Macedonian (/mk)
+
+/* KEY PAGES */
+Home: https://pgmacedonia.mk/
+Paragliding guide: https://pgmacedonia.mk/paragliding-macedonia
+Ohrid guide: https://pgmacedonia.mk/paragliding-ohrid
+Krushevo guide: https://pgmacedonia.mk/paragliding-krusevo
+Season guide: https://pgmacedonia.mk/paragliding-season-macedonia

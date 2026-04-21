@@ -24,15 +24,23 @@ const { mdAndUp } = useDisplay()
 const { t } = useI18n()
 const { ln } = useLocalizedNames()
 
-const nav = [
-  { name: 'home' as const, labelKey: 'nav.home' },
-  { name: 'tandem-ohrid' as const, labelKey: 'nav.tandemOhrid' },
-  { name: 'tandem-krusevo' as const, labelKey: 'nav.tandemKrusevo' },
-  { name: 'guiding' as const, labelKey: 'nav.guiding' },
-  { name: 'gallery' as const, labelKey: 'nav.gallery' },
-  { name: 'calendar' as const, labelKey: 'nav.calendar' },
-  { name: 'faq' as const, labelKey: 'nav.faq' },
-  { name: 'contact' as const, labelKey: 'nav.contact' },
+type NavChild = { name: string; labelKey: string }
+type NavItem = { name: string; labelKey: string; children?: NavChild[] }
+
+const nav: NavItem[] = [
+  { name: 'home', labelKey: 'nav.home' },
+  {
+    name: 'tandem',
+    labelKey: 'nav.tandem',
+    children: [
+      { name: 'tandem-ohrid', labelKey: 'nav.tandemOhrid' },
+      { name: 'tandem-krusevo', labelKey: 'nav.tandemKrusevo' },
+    ],
+  },
+  { name: 'guiding', labelKey: 'nav.guiding' },
+  { name: 'gallery', labelKey: 'nav.gallery' },
+  { name: 'faq', labelKey: 'nav.faq' },
+  { name: 'contact', labelKey: 'nav.contact' },
 ]
 
 /* ---- Animated paraglider that flies logo → first nav item ---- */
@@ -78,15 +86,45 @@ const gliderTrack = ref<HTMLElement | null>(null)
 
     <v-spacer class="glider-spacer" />
     <nav v-if="mdAndUp" class="header-nav d-flex align-center ga-1 justify-end">
-      <v-btn
-        v-for="item in nav"
-        :key="item.name"
-        :to="{ name: ln(item.name) }"
-        variant="text"
-        class="text-white header-nav__btn"
-      >
-        {{ t(item.labelKey) }}
-      </v-btn>
+      <template v-for="item in nav" :key="item.name">
+        <v-menu
+          v-if="item.children"
+          open-on-hover
+          open-delay="60"
+          close-delay="120"
+          location="bottom"
+          offset="4"
+          transition="fade-transition"
+        >
+          <template #activator="{ props: menuProps }">
+            <v-btn
+              v-bind="menuProps"
+              :to="{ name: ln(item.name) }"
+              variant="text"
+              class="text-white header-nav__btn header-nav__btn--has-menu"
+            >
+              {{ t(item.labelKey) }}
+              <v-icon end size="x-small" class="header-nav__chevron">mdi-chevron-down</v-icon>
+            </v-btn>
+          </template>
+          <v-list density="comfortable" class="header-nav__submenu" min-width="220">
+            <v-list-item
+              v-for="child in item.children"
+              :key="child.name"
+              :to="{ name: ln(child.name) }"
+              :title="t(child.labelKey)"
+            />
+          </v-list>
+        </v-menu>
+        <v-btn
+          v-else
+          :to="{ name: ln(item.name) }"
+          variant="text"
+          class="text-white header-nav__btn"
+        >
+          {{ t(item.labelKey) }}
+        </v-btn>
+      </template>
       <LocaleFlags class="ms-1" />
     </nav>
     <template v-else>
@@ -119,14 +157,24 @@ const gliderTrack = ref<HTMLElement | null>(null)
 
   <v-navigation-drawer v-model="drawer" temporary location="start" width="280">
     <v-list nav density="comfortable">
-      <v-list-item
-        v-for="item in nav"
-        :key="item.name"
-        :to="{ name: ln(item.name) }"
-        :title="t(item.labelKey)"
-        link
-        @click="drawer = false"
-      />
+      <template v-for="item in nav" :key="item.name">
+        <v-list-item
+          :to="{ name: ln(item.name) }"
+          :title="t(item.labelKey)"
+          link
+          @click="drawer = false"
+        />
+        <v-list-item
+          v-for="child in item.children"
+          :key="child.name"
+          :to="{ name: ln(child.name) }"
+          :title="t(child.labelKey)"
+          class="header-drawer__child"
+          density="compact"
+          link
+          @click="drawer = false"
+        />
+      </template>
       <v-divider class="my-3" />
       <v-list-subheader>{{ t('nav.language') }}</v-list-subheader>
       <div class="px-3 pb-2">
@@ -175,6 +223,35 @@ const gliderTrack = ref<HTMLElement | null>(null)
     padding-inline: 14px !important;
     font-size: 0.875rem;
   }
+}
+
+/* Subtle chevron on items that expand on hover */
+.header-nav__btn--has-menu .header-nav__chevron {
+  margin-inline-start: 2px;
+  opacity: 0.82;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.header-nav__btn--has-menu:hover .header-nav__chevron,
+.header-nav__btn--has-menu[aria-expanded='true'] .header-nav__chevron {
+  opacity: 1;
+  transform: translateY(1px);
+}
+
+/* Submenu panel — light surface with a soft lift */
+:global(.header-nav__submenu) {
+  border-radius: 12px !important;
+  box-shadow:
+    0 10px 28px rgba(12, 74, 110, 0.18),
+    0 2px 6px rgba(12, 74, 110, 0.08) !important;
+  overflow: hidden;
+}
+
+/* Drawer sub-item indent */
+.header-drawer__child {
+  padding-inline-start: 32px !important;
+}
+.header-drawer__child :deep(.v-list-item-title) {
+  font-size: 0.92rem;
 }
 
 /* ── Paraglider flight animation ── */

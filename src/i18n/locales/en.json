@@ -4,6 +4,16 @@
     "homeTitle": "Paragliding tandem & XC guiding in Macedonia",
     "guidingTitle": "XC guiding in Krushevo",
     "guidingDesc": "Seven-day XC guiding in Krushevo: accommodation, briefings, retrieve, and coaching.",
+    "paraglidingMacedoniaTitle": "Paragliding in Macedonia — Tandem flights and XC guiding",
+    "paraglidingMacedoniaDesc": "Paragliding in Macedonia with certified pilots: tandem flights in Ohrid and Krushevo plus XC guiding holidays in world-class conditions.",
+    "paraglidingOhridTitle": "Paragliding in Ohrid — tandem flight guide",
+    "paraglidingOhridDesc": "Paragliding in Ohrid from Galicica with certified tandem pilots, lake views, weather tips, and booking info.",
+    "paraglidingKrushevoTitle": "Paragliding in Krushevo — tandem and XC guide",
+    "paraglidingKrushevoDesc": "Paragliding in Krushevo from Meckin Kamen, including tandem flights and XC guiding details.",
+    "paraglidingSeasonTitle": "Paragliding season in Macedonia — best time to fly",
+    "paraglidingSeasonDesc": "When to paraglide in Macedonia: seasonal conditions in Ohrid and Krushevo and how to plan tandem or XC trips.",
+    "tandemTitle": "Tandem flights in Macedonia",
+    "tandemDesc": "Discover Macedonia from the sky — tandem paragliding in Ohrid and Krushevo, flown by certified pilots.",
     "tandemOhridTitle": "Tandem flight Ohrid — Galicica",
     "tandemOhridDesc": "Tandem paragliding over Ohrid and Prespa lakes from Galicica.",
     "tandemKrusevoTitle": "Tandem flight Krushevo",
@@ -21,11 +31,11 @@
   },
   "nav": {
     "home": "Home",
+    "tandem": "Tandem",
     "tandemOhrid": "Tandem Ohrid",
     "tandemKrusevo": "Tandem Krushevo",
     "guiding": "Guiding",
     "gallery": "Gallery",
-    "calendar": "Calendar",
     "faq": "FAQ",
     "contact": "Contact",
     "langMk": "MK",
@@ -36,6 +46,10 @@
     "tagline": "Tandem flights and XC guiding in Ohrid & Krushevo, Macedonia.",
     "contact": "Contact",
     "follow": "Follow",
+    "paraglidingMacedonia": "Paragliding in Macedonia",
+    "paraglidingOhrid": "Paragliding in Ohrid",
+    "paraglidingKrushevo": "Paragliding in Krushevo",
+    "paraglidingSeason": "Paragliding season in Macedonia",
     "rights": "All rights reserved."
   },
   "home": {
@@ -63,7 +77,8 @@
     "mapAddressLine2": "North Macedonia",
     "mapCoordsLabel": "Coordinates",
     "mapOpenExternal": "Open in Google Maps",
-    "mapIframeTitle": "Map of PG Macedonia base in Krushevo"
+    "mapIframeTitle": "Map of PG Macedonia base in Krushevo",
+    "paraglidingMacedoniaLink": "Read: Paragliding in Macedonia guide"
   },
   "forms": {
     "name": "Name",
@@ -141,22 +156,70 @@
     "formHeading": "Send us a message"
   },
   "guiding": {
+    "heroSubtitle": "Seven-day XC coaching in Krushevo — reliable conditions, briefings, retrieve, and accommodation in one package.",
     "whyTitle": "Why Krushevo",
     "whyLead": "Krushevo is one of the best and most reliable places on the planet to improve your paragliding skills.",
     "whyBody": "The area has hosted World Cups, European Championships, and the 2019 World Championship — with maximum flyable days.",
     "bullet1": "Predictable weather with almost no strong winds",
     "bullet2": "Safe take-offs and landings across the valley",
     "bullet3": "Easy retrieve thanks to villages and road access",
+    "whereTitle": "Where we fly",
+    "whereLead": "Our main flying area is Krushevo. Depending on weather, we run excursions to other world-class sites.",
+    "where1": "Krushevo — Meckin Kamen, main take-off",
+    "where2": "Treskavec — classic mountain launch",
+    "where3": "Sliva — alternative site for varied conditions",
+    "where4": "Ohrid — Galicica lakeside flying",
     "includesTitle": "What the package includes",
     "includes1": "Accommodation + breakfast (Villa Marija)",
     "includes2": "Lunch package",
     "includes3": "Airport transfers on request",
     "includes4": "Transport & retrieve during the tour",
     "includes5": "24/7 support and guidance",
-    "finePrint": "Lunch and dinner outside the package are not included. You need valid equipment, insurance with medical repatriation, and a radio. Typical duration: 7 days. Price: 700 € per person (minimum 4 pilots in group) — confirm current season pricing when you book.",
-    "calendarBtn": "Calendar & booking",
+    "needTitle": "What you need to bring",
+    "need1": "Paragliding equipment — checked, insured, within permitted weight",
+    "need2": "International health insurance with medical repatriation (e.g. ADAC Premium)",
+    "need3": "Radio for in-flight communication",
+    "priceTitle": "Package at a glance",
+    "priceDuration": "7 days",
+    "priceDurationLabel": "Duration",
+    "pricePrice": "€700 / person",
+    "pricePriceLabel": "Price",
+    "priceGroup": "Min. 4 pilots",
+    "priceGroupLabel": "Group size",
+    "priceNote": "Lunch and dinner outside the package are not included. Confirm current season pricing when you book.",
+    "bookTitle": "Book your guiding week",
+    "bookLead": "Pick check-in and check-out on the calendar below, then send a request. You will receive an email once the owner approves.",
+    "calendarBtn": "Book Dates",
+    "enquireBtn": "Enquire",
     "call": "Call",
-    "enquireTitle": "Enquire about guiding"
+    "enquireTitle": "Enquire about guiding",
+    "enquireLead": "Not sure about dates? Send a message and we will reply with availability and next steps."
+  },
+  "tandem": {
+    "heroTitle": "Discover Macedonia from the sky",
+    "heroSubtitle": "Tandem paragliding — no experience required. Fly with certified pilots above lakes, mountains, and valleys.",
+    "p1": "Have you ever wanted to experience the absolute freedom of flight? Want an adrenaline rush, to see Macedonia from a different perspective, to spoil your partner, or to do something you have never done before? Try a tandem paragliding flight with the PG Macedonia team.",
+    "p2": "No prior paragliding experience is required. Passengers are seated and strapped into a harness attached to the pilot — the only input needed from you is a short run on take-off and landing. The average tandem flight lasts about 15 minutes, and all flights are weather dependent.",
+    "p3": "All pilots are equipped with specialized cameras. On request we capture photos during your flight, delivered on a 2 GB SD card for 10 €. If conditions allow, we can also provide a short HD video. Please bring your own water, sun block, and a warm jacket.",
+    "highlights": [
+      "No experience required",
+      "Certified tandem pilots",
+      "~15 minutes airtime",
+      "Photos & video on request",
+      "Weather-dependent scheduling"
+    ],
+    "chooseTitle": "Choose your take-off",
+    "chooseLead": "Two world-class flying sites — pick the one that fits your trip.",
+    "ohridTitle": "Tandem — Ohrid",
+    "ohridKicker": "Galicica · lake views",
+    "ohridText": "Launch from Galicica National Park and fly above Ohrid and Prespa lakes. Ideal if you are staying on the Ohrid coast.",
+    "ohridPrice": "From 65 €",
+    "krusevoTitle": "Tandem — Krushevo",
+    "krusevoKicker": "Meckin Kamen · forests & valleys",
+    "krusevoText": "Launch from Meckin Kamen — one of the most visited take-offs in the region, with views over forests and the Pelagonia valley.",
+    "krusevoPrice": "From 79 €",
+    "exploreCta": "See packages & book",
+    "footnote": "Passengers are required to sign an indemnity form; flying is undertaken entirely at their own risk."
   },
   "tandemOhrid": {
     "heroTitle": "Tandem flight — Ohrid",
@@ -272,5 +335,106 @@
         "a": "Most guests use Skopje International Airport (SKP). Transfers from Ohrid or Thessaloniki can often be arranged — mention your plans in the contact form."
       }
     ]
+  },
+  "seoLanding": {
+    "title": "Paragliding in Macedonia",
+    "lead": "Macedonia is one of Europe’s most reliable flying destinations for tandem experiences and cross-country progression.",
+    "whyTitle": "Why fly paragliding in Macedonia",
+    "p1": "North Macedonia combines mountain and flatland terrain, strong but manageable thermals, and a long flying season. This gives both first-time tandem passengers and licensed pilots excellent flight days.",
+    "p2": "PG Macedonia operates with certified tandem pilots and experienced XC guides, focusing on safety, weather-based planning, and clear communication from booking to landing.",
+    "locationsTitle": "Main flying locations",
+    "location1": "Ohrid / Galicica — tandem flights over Ohrid and Prespa lakes.",
+    "location2": "Krushevo / Meckin Kamen — tandem flights above forests and valleys.",
+    "location3": "Krushevo XC area — guided cross-country coaching for licensed pilots.",
+    "guidesTitle": "Location guides",
+    "guideOhrid": "Paragliding in Ohrid guide",
+    "guideKrushevo": "Paragliding in Krushevo guide",
+    "guideSeason": "Best season guide",
+    "ctaTandem": "See tandem options",
+    "ctaGuiding": "Explore XC guiding",
+    "ctaContact": "Contact PG Macedonia",
+    "factsTitle": "Quick facts",
+    "fact1": "Reliable flying weather in season",
+    "fact2": "World-known sites: Ohrid & Krushevo",
+    "fact3": "Certified pilots and safety-first operations"
+  },
+  "seoOhrid": {
+    "title": "Paragliding in Ohrid",
+    "lead": "Fly above Ohrid Lake and Galicica with certified tandem pilots and weather-safe operations.",
+    "whyTitle": "Why Ohrid is special for paragliding",
+    "p1": "Ohrid combines mountain launch terrain and lake views that are unique in the Balkans. Flights from Galicica can reveal both Ohrid and Prespa lakes in one panorama.",
+    "p2": "For first-time passengers, tandem paragliding in Ohrid is one of the easiest ways to experience flight safely. For returning guests, weather windows offer different styles, from gentle morning flights to longer lines when conditions allow.",
+    "expectTitle": "What to expect",
+    "expect1": "Short safety briefing and harness setup before take-off.",
+    "expect2": "Weather-dependent timing for safer and smoother airtime.",
+    "expect3": "Optional photos and video during flight.",
+    "ctaPrimary": "Book Tandem Ohrid",
+    "ctaContact": "Contact us first",
+    "ctaKrushevo": "Also see Krushevo",
+    "tipTitle": "Best planning tip",
+    "tipText": "Keep at least one flexible day in Ohrid so your flight can be scheduled in the best weather window.",
+    "faqTitle": "FAQ — Paragliding in Ohrid",
+    "faq": [
+      {
+        "q": "Do I need prior experience for paragliding in Ohrid?",
+        "a": "No. Tandem flights in Ohrid are designed for beginners; your pilot controls take-off, flight, and landing."
+      },
+      {
+        "q": "How long is a tandem paragliding experience in Ohrid?",
+        "a": "The complete experience usually takes around 1.5 to 2 hours including transfer and briefing, while airtime depends on weather."
+      },
+      {
+        "q": "When is the best period for paragliding in Ohrid?",
+        "a": "Most flights run from spring to autumn, with schedule and duration adjusted to daily weather conditions."
+      }
+    ]
+  },
+  "seoKrushevo": {
+    "title": "Paragliding in Krushevo",
+    "lead": "Krushevo is one of Europe’s best known paragliding locations for both tandem flights and XC progression.",
+    "whyTitle": "Why Krushevo ranks among top flying sites",
+    "p1": "Meckin Kamen and the surrounding terrain provide reliable thermals, broad landing options, and routes suitable for different experience levels. This is why Krushevo repeatedly hosts high-level competitions.",
+    "p2": "Visitors can choose a tandem flight for a first sky experience, while licensed pilots can use Krushevo for guided XC improvement with briefings, retrieve, and post-flight feedback.",
+    "expectTitle": "What to expect",
+    "expect1": "Clear site briefing and weather-based launch planning.",
+    "expect2": "Flights above forests, valleys, and the Pelagonia region.",
+    "expect3": "Support options for both tandem guests and XC pilots.",
+    "ctaPrimary": "Book Tandem Krushevo",
+    "ctaGuiding": "Explore XC guiding",
+    "ctaOhrid": "Also see Ohrid",
+    "tipTitle": "Best planning tip",
+    "tipText": "If you stay several days in Krushevo, conditions often allow combining a tandem day with a guided XC day.",
+    "faqTitle": "FAQ — Paragliding in Krushevo",
+    "faq": [
+      {
+        "q": "Is Krushevo suitable for first-time tandem paragliding?",
+        "a": "Yes. Krushevo offers reliable conditions and established take-off areas, making it one of the most popular tandem locations in the region."
+      },
+      {
+        "q": "Can licensed pilots book XC guiding in Krushevo?",
+        "a": "Yes. Krushevo is a core destination for guided XC progression with weather briefings, retrieve support, and coaching."
+      },
+      {
+        "q": "How many days should I plan for Krushevo paragliding?",
+        "a": "A multi-day stay is recommended so flights can be matched to the best weather windows and your goals."
+      }
+    ]
+  },
+  "seoSeason": {
+    "title": "Paragliding season in Macedonia",
+    "lead": "The best time for paragliding in Macedonia depends on your location, weather goals, and whether you want tandem or XC flying.",
+    "whenTitle": "When to plan your trip",
+    "p1": "In general, spring through autumn is the main flying period in Macedonia. Krushevo and Ohrid both offer strong flying opportunities, but daily conditions vary and should always guide launch decisions.",
+    "p2": "For tandem guests, flexibility is key: weather-based scheduling gives safer and better flights. For licensed XC pilots, longer stays improve the chance of catching stronger windows and completing bigger tasks.",
+    "monthsTitle": "Typical season pattern",
+    "month1": "April–May: early-season consistency, often smoother mornings.",
+    "month2": "June–August: stronger thermals, peak flying activity in Krushevo.",
+    "month3": "September–October: stable autumn windows and good visibility.",
+    "month4": "Day-to-day decisions always follow local weather and safety checks.",
+    "ctaTandem": "View tandem flights",
+    "ctaGuiding": "View XC guiding",
+    "ctaContact": "Ask for best dates",
+    "tipTitle": "Planning tip",
+    "tipText": "If possible, plan a 2–4 day window instead of one fixed slot to maximize your chance of ideal conditions."
   }
 }

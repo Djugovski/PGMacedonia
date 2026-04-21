@@ -19,18 +19,21 @@ const tiers = computed(() => [
     name: t('tandemOhrid.earlyName'),
     price: t('tandemOhrid.earlyPrice'),
     note: t('tandemOhrid.earlyNote'),
+    image: '/gallery/07.JPG',
     booking: { name: ln('booking-tandem'), query: { program: 'early' } },
   },
   {
     name: t('tandemOhrid.expName'),
     price: t('tandemOhrid.expPrice'),
     note: t('tandemOhrid.expNote'),
+    image: '/gallery/08.JPG',
     booking: { name: ln('booking-tandem'), query: { program: 'experience' } },
   },
   {
     name: t('tandemOhrid.xcName'),
     price: t('tandemOhrid.xcPrice'),
     note: t('tandemOhrid.xcNote'),
+    image: '/gallery/09.JPG',
     booking: { name: ln('booking-tandem'), query: { program: 'xc' } },
   },
 ])
@@ -46,6 +49,7 @@ const tiers = computed(() => [
       <v-row>
         <v-col v-for="tier in tiers" :key="tier.name" cols="12" md="4">
           <v-card class="h-100 d-flex flex-column" elevation="2">
+            <v-img :src="tier.image" :alt="tier.name" height="180" cover />
             <v-card-title class="text-h6">{{ tier.name }}</v-card-title>
             <v-card-subtitle class="text-h6 text-primary">{{ tier.price }}</v-card-subtitle>
             <v-card-text class="flex-grow-1 text-body-2">{{ tier.note }}</v-card-text>
