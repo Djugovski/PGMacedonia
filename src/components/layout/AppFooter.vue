@@ -5,6 +5,8 @@ import { useLocalizedNames } from '@/composables/useLocalizedNames'
 
 const { t } = useI18n()
 const { ln } = useLocalizedNames()
+
+const appVersion = __APP_VERSION__
 </script>
 
 <template>
@@ -75,6 +77,7 @@ const { ln } = useLocalizedNames()
         <div class="mt-1">
           {{ t('footer.imageryCredit', { name: siteConfig.name }) }}
         </div>
+        <div class="mt-2 pg-footer-version" :title="`Build ${appVersion}`">v{{ appVersion }}</div>
       </div>
     </v-container>
   </v-footer>
@@ -83,5 +86,11 @@ const { ln } = useLocalizedNames()
 <style scoped>
 .pg-footer-copyright {
   line-height: 1.55;
+}
+.pg-footer-version {
+  opacity: 0.55;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
 }
 </style>

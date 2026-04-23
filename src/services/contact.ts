@@ -11,9 +11,10 @@ export interface ContactPayload {
   email: string
   subject?: string
   message: string
-  /** Simple bot deterrent; backend should re-validate or use hCaptcha/Turnstile */
-  captchaAnswer: number
-  captchaExpected: number
+  /** Math captcha: the rendered question string (e.g. "3 + 7"). */
+  captchaQuestion?: string
+  /** Math captcha: the visitor's numeric answer. */
+  captchaAnswer?: number
   meta?: Record<string, string | number | undefined>
 }
 
@@ -32,8 +33,10 @@ function contactEndpoint(): string {
   if (custom) return custom
   const api = import.meta.env.VITE_API_URL?.trim()
   if (api) return `${api.replace(/\/$/, '')}/api/contact`
-  if (import.meta.env.DEV) return '/api/contact'
-  return ''
+  // Default to same-origin relative URL. Works in local dev (Vite proxies /api)
+  // and in production when the host routes /api/* to the Node backend
+  // (e.g. cPanel Node.js Selector, reverse proxy, or a path-based edge rule).
+  return '/api/contact'
 }
 
 export async function submitContact(payload: ContactPayload): Promise<void> {

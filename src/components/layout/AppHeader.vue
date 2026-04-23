@@ -3,7 +3,10 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import { useDisplay } from 'vuetify'
 import { useI18n } from 'vue-i18n'
 import AppLogo from '@/components/layout/AppLogo.vue'
-import LocaleFlags from '@/components/layout/LocaleFlags.vue'
+// NOTE: The language switcher (<LocaleFlags />) is intentionally hidden for
+// now — the site runs English-only until the Macedonian copy has been
+// polished by a native speaker. The MK routes and translations still exist;
+// re-add <LocaleFlags /> in the template to turn the switcher back on.
 import { useLocalizedNames } from '@/composables/useLocalizedNames'
 
 const drawer = ref(false)
@@ -125,11 +128,9 @@ const gliderTrack = ref<HTMLElement | null>(null)
           {{ t(item.labelKey) }}
         </v-btn>
       </template>
-      <LocaleFlags class="ms-1" />
     </nav>
     <template v-else>
-      <LocaleFlags class="me-1" />
-      <!-- Mobile/tablet: glider flies after the flags to the right edge -->
+      <!-- Mobile/tablet: glider flies to the right edge -->
       <div class="glider-track glider-track--mobile" aria-hidden="true">
         <svg class="glider-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="white">
           <g transform="translate(120,0) scale(-1,1)">
@@ -175,11 +176,6 @@ const gliderTrack = ref<HTMLElement | null>(null)
           @click="drawer = false"
         />
       </template>
-      <v-divider class="my-3" />
-      <v-list-subheader>{{ t('nav.language') }}</v-list-subheader>
-      <div class="px-3 pb-2">
-        <LocaleFlags on-light />
-      </div>
     </v-list>
   </v-navigation-drawer>
 </template>

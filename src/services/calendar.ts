@@ -9,7 +9,9 @@ export interface CalendarMonthResponse {
 function apiBase(): string {
   const u = import.meta.env.VITE_API_URL?.trim()
   if (u) return u.replace(/\/$/, '')
-  if (import.meta.env.DEV) return ''
+  // Empty string means "same origin": `/api/calendar` resolves against the
+  // current host, so it works both in dev (Vite proxy) and in prod when the
+  // host routes `/api/*` to the Node backend.
   return ''
 }
 
@@ -29,8 +31,10 @@ export interface CalendarRequestPayload {
   email: string
   phone?: string
   message?: string
-  captchaAnswer: number
-  captchaExpected: number
+  /** Math captcha: the rendered question string (e.g. "3 + 7"). */
+  captchaQuestion?: string
+  /** Math captcha: the visitor's numeric answer. */
+  captchaAnswer?: number
 }
 
 export async function submitCalendarRequest(payload: CalendarRequestPayload): Promise<void> {

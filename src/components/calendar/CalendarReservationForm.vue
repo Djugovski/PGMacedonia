@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import MathCaptcha from '@/components/forms/MathCaptcha.vue'
 import { useMathCaptcha } from '@/composables/useMathCaptcha'
 import { submitCalendarRequest } from '@/services/calendar'
 
@@ -16,21 +17,27 @@ const lastName = ref('')
 const email = ref('')
 const phone = ref('')
 const message = ref('')
-const captchaInput = ref<number | null>(null)
+
+const { question, answer, isValid, regenerate, asPayload } = useMathCaptcha()
+const captchaTouched = ref(false)
+const captchaShowError = computed(() => captchaTouched.value && !isValid.value && answer.value.trim() !== '')
+
 const loading = ref(false)
 const snack = ref({ show: false, text: '', color: 'success' })
 
-const { refresh: refreshCaptcha, question, expected } = useMathCaptcha()
-
-const canSubmit = computed(() => props.start && props.end && firstName.value.trim() && email.value.trim())
+const canSubmit = computed(
+  () =>
+    !!props.start &&
+    !!props.end &&
+    firstName.value.trim().length > 0 &&
+    email.value.trim().length > 0,
+)
 
 async function onSubmit() {
   if (!props.start || !props.end) return
-  const expectedVal = expected()
-  if (captchaInput.value !== expectedVal) {
+  captchaTouched.value = true
+  if (!isValid.value || !asPayload.value) {
     snack.value = { show: true, text: t('forms.captchaWrong'), color: 'error' }
-    refreshCaptcha()
-    captchaInput.value = null
     return
   }
 
@@ -44,8 +51,7 @@ async function onSubmit() {
       email: email.value.trim(),
       phone: phone.value.trim() || undefined,
       message: message.value.trim() || undefined,
-      captchaAnswer: captchaInput.value ?? -1,
-      captchaExpected: expectedVal,
+      ...asPayload.value,
     })
     snack.value = { show: true, text: t('calendar.calendarSuccess'), color: 'success' }
     firstName.value = ''
@@ -53,14 +59,16 @@ async function onSubmit() {
     email.value = ''
     phone.value = ''
     message.value = ''
-    captchaInput.value = null
-    refreshCaptcha()
+    captchaTouched.value = false
+    regenerate()
   } catch (e) {
     snack.value = {
       show: true,
       text: e instanceof Error ? e.message : t('calendar.calendarError'),
       color: 'error',
     }
+    regenerate()
+    captchaTouched.value = false
   } finally {
     loading.value = false
   }
@@ -72,17 +80,16 @@ async function onSubmit() {
     <v-alert v-if="!start || !end" type="info" variant="tonal" density="comfortable" class="mb-4">
       {{ t('calendar.instruction') }}
     </v-alert>
-    <v-text-field v-model="firstName" :label="t('forms.firstName')" required autocomplete="given-name" />
-    <v-text-field v-model="lastName" :label="t('forms.lastName')" autocomplete="family-name" />
-    <v-text-field v-model="email" :label="t('forms.email')" type="email" required autocomplete="email" />
-    <v-text-field v-model="phone" :label="t('forms.phone')" autocomplete="tel" />
-    <v-textarea v-model="message" :label="t('forms.messageOptional')" rows="3" />
-    <v-text-field
-      v-model.number="captchaInput"
-      :label="question()"
-      type="number"
-      required
-      class="mb-2"
+    <v-text-field v-model="firstName" :label="t('forms.firstName')" required autocomplete="given-name" maxlength="100" />
+    <v-text-field v-model="lastName" :label="t('forms.lastName')" autocomplete="family-name" maxlength="100" />
+    <v-text-field v-model="email" :label="t('forms.email')" type="email" required autocomplete="email" maxlength="320" />
+    <v-text-field v-model="phone" :label="t('forms.phone')" autocomplete="tel" maxlength="40" />
+    <v-textarea v-model="message" :label="t('forms.messageOptional')" rows="3" maxlength="2000" counter />
+    <MathCaptcha
+      v-model="answer"
+      :question="question"
+      :invalid="captchaShowError"
+      @refresh="regenerate"
     />
     <v-btn type="submit" color="primary" size="large" block :loading="loading" :disabled="!canSubmit">
       {{ t('calendar.submitCalendar') }}

@@ -1,12 +1,21 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { dirname, isAbsolute, resolve } from 'node:path'
 import { randomBytes } from 'node:crypto'
 
-export const CALENDAR_FILE = new URL('./data/calendar.json', import.meta.url)
-
-function calendarPath() {
-  return fileURLToPath(CALENDAR_FILE)
+/**
+ * Location of the persistent calendar JSON file.
+ *
+ * Defaults to `<cwd>/server/data/calendar.json` (works for `npm run dev`,
+ * where cwd is the repo root, and for `node dist-server/index.cjs` when the
+ * working directory is the project root).
+ *
+ * Override with `CALENDAR_DATA_FILE` to point at a persistent disk on any
+ * host (Render disks, Fly volumes, cPanel home dir, Docker volume, etc.).
+ */
+function calendarPath(): string {
+  const custom = process.env.CALENDAR_DATA_FILE?.trim()
+  if (custom) return isAbsolute(custom) ? custom : resolve(process.cwd(), custom)
+  return resolve(process.cwd(), 'server', 'data', 'calendar.json')
 }
 
 export interface ConfirmedRange {

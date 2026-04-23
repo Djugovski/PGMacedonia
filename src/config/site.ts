@@ -15,10 +15,9 @@ export const siteConfig = {
   mapQuery: '41.364271,21.248225',
   stripePayUrl: 'https://buy.stripe.com/aEUaFSc8mfUmctG28b',
   defaultLocale: 'en',
-  /** Base for gallery images if you host on WP uploads or a CDN */
+  /** Base for gallery images. Defaults to the SPA's own `/gallery/` folder; override with VITE_GALLERY_BASE_URL to point at a CDN. */
   galleryBaseUrl:
-    import.meta.env.VITE_GALLERY_BASE_URL?.replace(/\/$/, '') ??
-    'https://pgmacedonia.mk/wp-content/uploads',
+    import.meta.env.VITE_GALLERY_BASE_URL?.replace(/\/$/, '') ?? '/gallery',
   /** Optional absolute image URL for og:image + JSON-LD (set VITE_OG_IMAGE_URL in .env) */
   defaultOgImage: import.meta.env.VITE_OG_IMAGE_URL?.trim() || 'https://pgmacedonia.mk/logo.png',
 } as const

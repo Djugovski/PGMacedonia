@@ -1,0 +1,54 @@
+# One-click deploy for the API backend on Render.com (free tier works).
+# Prerequisite: push this repo to GitHub, then go to https://dashboard.render.com/blueprints
+# and point it at the repo. Render will read this file and create the service.
+#
+# After creation, set the secret env vars (SMTP_*, CALENDAR_ADMIN_SECRET)
+# in the Render dashboard — do NOT commit them.
+services:
+  - type: web
+    name: pgmacedonia-api
+    runtime: node
+    plan: free
+    # Branch / region left at defaults; adjust if you like.
+    buildCommand: npm ci && npm run build:server
+    startCommand: node dist-server/index.cjs
+    healthCheckPath: /api/calendar?year=2026&month=1
+    autoDeploy: true
+
+    # Persistent disk so the calendar JSON survives restarts.
+    disk:
+      name: pgmacedonia-data
+      mountPath: /var/data
+      sizeGB: 1
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_PORT
+        value: '10000' # Render injects PORT too; our server reads API_PORT first.
+      - key: TRUST_PROXY
+        value: 'true'
+      - key: CALENDAR_DATA_FILE
+        value: /var/data/calendar.json
+      - key: APP_PUBLIC_URL
+        value: https://pgmacedonia.mk
+      - key: EXTRA_CORS_ORIGINS
+        value: ''
+      - key: CONTACT_TO_EMAIL
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: CALENDAR_ADMIN_SECRET
+        sync: false
+      - key: NEXTCLOUD_SHARE_URL
+        sync: false
+      - key: NEXTCLOUD_SHARE_PASSWORD
+        sync: false

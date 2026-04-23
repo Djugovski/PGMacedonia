@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import MathCaptcha from '@/components/forms/MathCaptcha.vue'
 import { useMathCaptcha } from '@/composables/useMathCaptcha'
 import { submitContact } from '@/services/contact'
 
@@ -51,22 +52,22 @@ const residence = ref('')
 const message = ref('')
 const travelStart = ref('')
 const travelEnd = ref('')
-const captchaInput = ref<number | null>(null)
+
+const { question, answer, isValid, regenerate, asPayload } = useMathCaptcha()
+const captchaTouched = ref(false)
+const captchaShowError = computed(() => captchaTouched.value && !isValid.value && answer.value.trim() !== '')
+
 const loading = ref(false)
 const snack = ref({ show: false, text: '', color: 'success' })
 
 const personOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const { refresh: refreshCaptcha, question, expected } = useMathCaptcha()
-
 const selectedProgramLabel = computed(() => programs.value[programIndex.value] ?? programsEn[1]!)
 
 async function onSubmit() {
-  const expectedVal = expected()
-  if (captchaInput.value !== expectedVal) {
+  captchaTouched.value = true
+  if (!isValid.value || !asPayload.value) {
     snack.value = { show: true, text: t('forms.captchaWrong'), color: 'error' }
-    refreshCaptcha()
-    captchaInput.value = null
     return
   }
 
@@ -78,8 +79,7 @@ async function onSubmit() {
       email: email.value.trim(),
       subject: `Tandem booking — ${selectedProgramLabel.value}`,
       message: message.value.trim() || '—',
-      captchaAnswer: captchaInput.value ?? -1,
-      captchaExpected: expectedVal,
+      ...asPayload.value,
       meta: {
         phone: phone.value.trim(),
         program: selectedProgramLabel.value,
@@ -95,14 +95,16 @@ async function onSubmit() {
       text: t('forms.thanksBooking'),
       color: 'success',
     }
-    captchaInput.value = null
-    refreshCaptcha()
+    captchaTouched.value = false
+    regenerate()
   } catch (e) {
     snack.value = {
       show: true,
       text: e instanceof Error ? e.message : t('forms.errorGeneric'),
       color: 'error',
     }
+    regenerate()
+    captchaTouched.value = false
   } finally {
     loading.value = false
   }
@@ -111,9 +113,9 @@ async function onSubmit() {
 
 <template>
   <v-form @submit.prevent="onSubmit">
-    <v-text-field v-model="name" :label="t('forms.name')" required autocomplete="name" />
-    <v-text-field v-model="email" :label="t('forms.email')" type="email" required autocomplete="email" />
-    <v-text-field v-model="phone" :label="t('forms.phone')" required autocomplete="tel" />
+    <v-text-field v-model="name" :label="t('forms.name')" required autocomplete="name" maxlength="200" />
+    <v-text-field v-model="email" :label="t('forms.email')" type="email" required autocomplete="email" maxlength="320" />
+    <v-text-field v-model="phone" :label="t('forms.phone')" required autocomplete="tel" maxlength="40" />
     <v-select
       v-model="programIndex"
       :items="programItems"
@@ -124,11 +126,16 @@ async function onSubmit() {
     />
     <v-text-field v-model="preferredDate" :label="t('forms.preferredDate')" type="date" required />
     <v-select v-model="persons" :items="personOptions" :label="t('forms.persons')" required />
-    <v-text-field v-model="residence" :label="t('forms.residence')" />
+    <v-text-field v-model="residence" :label="t('forms.residence')" maxlength="200" />
     <v-text-field v-model="travelStart" :label="t('forms.travelStart')" type="date" />
     <v-text-field v-model="travelEnd" :label="t('forms.travelEnd')" type="date" />
-    <v-textarea v-model="message" :label="t('forms.messageOptional')" rows="3" />
-    <v-text-field v-model.number="captchaInput" :label="question()" type="number" required class="mb-2" />
+    <v-textarea v-model="message" :label="t('forms.messageOptional')" rows="3" maxlength="5000" counter />
+    <MathCaptcha
+      v-model="answer"
+      :question="question"
+      :invalid="captchaShowError"
+      @refresh="regenerate"
+    />
     <v-btn type="submit" color="primary" size="large" :loading="loading" block>
       {{ t('forms.sendBooking') }}
     </v-btn>

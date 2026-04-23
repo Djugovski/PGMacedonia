@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import MathCaptcha from '@/components/forms/MathCaptcha.vue'
 import { useMathCaptcha } from '@/composables/useMathCaptcha'
 import { submitContact, type InquiryKind } from '@/services/contact'
 
@@ -24,15 +25,17 @@ const numberOfPeople = ref<number | null>(null)
 const needAccommodation = ref<string | null>(null)
 const arrivalDate = ref('')
 const departureDate = ref('')
-const captchaInput = ref<number | null>(null)
+
+const { question, answer, isValid, regenerate, asPayload } = useMathCaptcha()
+const captchaTouched = ref(false)
+const captchaShowError = computed(() => captchaTouched.value && !isValid.value && answer.value.trim() !== '')
+
 const loading = ref(false)
 const snack = ref<{ show: boolean; text: string; color: string }>({
   show: false,
   text: '',
   color: 'success',
 })
-
-const { refresh: refreshCaptcha, question, expected } = useMathCaptcha()
 
 const showGuidingExtras = computed(() => props.kind === 'guiding')
 const personItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15]
@@ -44,11 +47,9 @@ const accommodationItems = computed(() => [
 const labelSubmit = computed(() => props.submitLabel ?? t('forms.send'))
 
 async function onSubmit() {
-  const expectedVal = expected()
-  if (captchaInput.value !== expectedVal) {
+  captchaTouched.value = true
+  if (!isValid.value || !asPayload.value) {
     snack.value = { show: true, text: t('forms.captchaWrong'), color: 'error' }
-    refreshCaptcha()
-    captchaInput.value = null
     return
   }
 
@@ -68,8 +69,7 @@ async function onSubmit() {
       email: email.value.trim(),
       subject: subject.value.trim() || undefined,
       message: message.value.trim(),
-      captchaAnswer: captchaInput.value ?? -1,
-      captchaExpected: expectedVal,
+      ...asPayload.value,
       meta: Object.keys(meta).length ? meta : undefined,
     })
     snack.value = {
@@ -85,14 +85,16 @@ async function onSubmit() {
     needAccommodation.value = null
     arrivalDate.value = ''
     departureDate.value = ''
-    captchaInput.value = null
-    refreshCaptcha()
+    captchaTouched.value = false
+    regenerate()
   } catch (e) {
     snack.value = {
       show: true,
       text: e instanceof Error ? e.message : t('forms.errorGeneric'),
       color: 'error',
     }
+    regenerate()
+    captchaTouched.value = false
   } finally {
     loading.value = false
   }
@@ -101,9 +103,9 @@ async function onSubmit() {
 
 <template>
   <v-form @submit.prevent="onSubmit">
-    <v-text-field v-model="name" :label="t('forms.name')" required autocomplete="name" />
-    <v-text-field v-model="email" :label="t('forms.email')" type="email" required autocomplete="email" />
-    <v-text-field v-model="subject" :label="t('forms.subject')" required />
+    <v-text-field v-model="name" :label="t('forms.name')" required autocomplete="name" maxlength="200" counter />
+    <v-text-field v-model="email" :label="t('forms.email')" type="email" required autocomplete="email" maxlength="320" />
+    <v-text-field v-model="subject" :label="t('forms.subject')" required maxlength="300" />
     <template v-if="showGuidingExtras">
       <v-select
         v-model="numberOfPeople"
@@ -122,15 +124,12 @@ async function onSubmit() {
       <v-text-field v-model="arrivalDate" :label="t('forms.arrivalDate')" type="date" />
       <v-text-field v-model="departureDate" :label="t('forms.departureDate')" type="date" />
     </template>
-    <v-textarea v-model="message" :label="t('forms.message')" rows="4" required />
-    <v-text-field
-      v-model.number="captchaInput"
-      :label="question()"
-      type="number"
-      required
-      :hint="t('forms.captchaHint')"
-      persistent-hint
-      class="mb-2"
+    <v-textarea v-model="message" :label="t('forms.message')" rows="4" required maxlength="5000" counter />
+    <MathCaptcha
+      v-model="answer"
+      :question="question"
+      :invalid="captchaShowError"
+      @refresh="regenerate"
     />
     <v-btn type="submit" color="primary" size="large" :loading="loading" block>
       {{ labelSubmit }}

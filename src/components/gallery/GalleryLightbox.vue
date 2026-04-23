@@ -3,7 +3,14 @@ import { computed, ref, watch, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 export type GalleryLightboxItem = {
+  /** Discriminator so the lightbox can render <img> or <video>. */
+  type?: 'image' | 'video'
+  /** Main URL used to render in the lightbox (preview for images, source for video). */
   resolved: string
+  /** Original download URL — used as an additional <source> for videos (fallback). */
+  downloadUrl?: string
+  /** Mime type used for <video><source type="…">. */
+  mime?: string
   alt: string
 }
 
@@ -141,7 +148,22 @@ const counter = computed(() =>
           <v-icon size="42">mdi-chevron-left</v-icon>
         </v-btn>
 
+        <template v-if="current.type === 'video'">
+          <video
+            :key="currentIndex"
+            class="gallery-lightbox__video mx-auto"
+            controls
+            playsinline
+            preload="metadata"
+            :aria-label="current.alt"
+            @click.stop
+          >
+            <source :src="current.downloadUrl ?? current.resolved" :type="current.mime" />
+            {{ t('gallery.videoUnsupported') }}
+          </video>
+        </template>
         <v-img
+          v-else
           :key="currentIndex"
           class="gallery-lightbox__img mx-auto"
           :src="current.resolved"
@@ -245,6 +267,16 @@ const counter = computed(() =>
 .gallery-lightbox__img {
   position: relative;
   z-index: 2;
+}
+
+.gallery-lightbox__video {
+  position: relative;
+  z-index: 2;
+  max-height: calc(100vh - 120px);
+  max-width: min(96vw, 1100px);
+  width: auto;
+  background: black;
+  border-radius: 4px;
 }
 
 .gallery-lightbox__caption {

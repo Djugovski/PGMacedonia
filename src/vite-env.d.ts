@@ -12,3 +12,8 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv
 }
+
+/** Injected by Vite at build time — current package.json version. */
+declare const __APP_VERSION__: string
+/** Injected by Vite at build time — ISO timestamp of the build. */
+declare const __APP_BUILD_TIME__: string

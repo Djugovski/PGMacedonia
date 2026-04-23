@@ -1,57 +1,33 @@
 import { siteConfig } from '@/config/site'
 
 export interface GalleryImage {
-  /** Path or full URL. If it starts with http(s) or /, used as-is; else joined with galleryBaseUrl. */
+  /**
+   * Path or full URL. If it starts with http(s) or /, it is used as-is;
+   * otherwise it is joined with `siteConfig.galleryBaseUrl`.
+   */
   src: string
   alt: string
-  /** Optional smaller image for grid; same resolution rules as src */
+  /** Optional smaller image for the grid; same resolution rules as `src`. */
   thumb?: string
 }
 
-/** WordPress media on pgmacedonia.mk (`wp-content/uploads/…`). Override base with `VITE_GALLERY_BASE_URL` for a CDN mirror. */
-const U = 'https://pgmacedonia.mk/wp-content/uploads/2025/09'
-
+/**
+ * Gallery photos are served straight from the site's `public/gallery/` folder.
+ * This keeps the images on the same origin as the SPA (fast, cacheable,
+ * no cross-origin issues, and survives any future WordPress migration).
+ *
+ * To add more images, drop them into `public/gallery/` and list them here.
+ */
 export const galleryImages: GalleryImage[] = [
-  {
-    src: `${U}/G0046879_1693568584857-scaled.jpg`,
-    thumb: `${U}/G0046879_1693568584857-845x684.jpg`,
-    alt: 'Paragliding tandem over mountains — Macedonia',
-  },
-  {
-    src: `${U}/G0035102_1693216240404-scaled.jpg`,
-    thumb: `${U}/G0035102_1693216240404-845x684.jpg`,
-    alt: 'Paragliding flight with lake view',
-  },
-  {
-    src: `${U}/G0046876_1693568545509-scaled.jpg`,
-    thumb: `${U}/G0046876_1693568545509-845x684.jpg`,
-    alt: 'Tandem paragliding in flight',
-  },
-  {
-    src: `${U}/GOPR0578_1754597210123-1.jpg`,
-    thumb: `${U}/GOPR0578_1754597210123-1-845x684.jpg`,
-    alt: 'Tandem passenger and pilot above Ohrid region',
-  },
-  {
-    src: `${U}/G0012960_1720617817095-scaled.jpg`,
-    thumb: `${U}/G0012960_1720617817095-845x684.jpg`,
-    alt: 'Paragliding near Krushevo',
-  },
-  {
-    src: `${U}/G0050900_1688739552039-scaled.jpg`,
-    thumb: `${U}/G0050900_1688739552039-845x684.jpg`,
-    alt: 'Paragliding take-off and valley',
-  },
-  {
-    src: `${U}/G0014071_1756208560060_2-scaled.jpg`,
-    thumb: `${U}/G0014071_1756208560060_2-845x684.jpg`,
-    alt: 'Paragliding over Macedonian landscape',
-  },
-  {
-    src: `${U}/G0044236_1756208401616_2-scaled.jpg`,
-    thumb: `${U}/G0044236_1756208401616_2-845x684.jpg`,
-    alt: 'In-flight view — tandem paragliding',
-  },
+  { src: '/gallery/01.jpg', alt: 'Tandem paragliding flight over Krushevo — PG Macedonia' },
+  { src: '/gallery/02.jpg', alt: 'Tandem paragliding above Lake Ohrid — PG Macedonia' },
+  { src: '/gallery/03.jpg', alt: 'Paragliding take-off near Krushevo, North Macedonia' },
+  { src: '/gallery/04.jpg', alt: 'Paragliding passenger and pilot in flight — Macedonia' },
+  { src: '/gallery/05.jpg', alt: 'Cross-country paragliding view over Macedonian landscape' },
+  { src: '/gallery/06.jpg', alt: 'Paraglider soaring above mountains — PG Macedonia' },
+  { src: '/gallery/07.JPG', alt: 'Ohrid tandem flight — Early Bird package' },
+  { src: '/gallery/08.JPG', alt: 'Ohrid tandem flight — Experience package' },
+  { src: '/gallery/09.JPG', alt: 'Ohrid cross-country tandem flight' },
 ]
 
 export function resolveGallerySrc(item: GalleryImage): string {
@@ -59,8 +35,8 @@ export function resolveGallerySrc(item: GalleryImage): string {
   return `${siteConfig.galleryBaseUrl}/${item.src.replace(/^\//, '')}`
 }
 
-/** Home teaser strip: first N images in canonical gallery order (add more in `galleryImages` as needed). */
-export const HOME_GALLERY_PREVIEW_LIMIT = 12 as const
+/** Home teaser strip: first N images in canonical gallery order. */
+export const HOME_GALLERY_PREVIEW_LIMIT = 9 as const
 
 export function galleryImagesForHomePreview(): GalleryImage[] {
   return galleryImages.slice(0, HOME_GALLERY_PREVIEW_LIMIT)
