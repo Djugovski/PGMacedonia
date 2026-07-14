@@ -17,12 +17,12 @@ usePageMeta({
 const defaultProgram = computed(() => {
   const key = typeof route.query.program === 'string' ? route.query.program : ''
   const map: Record<string, string> = {
-    early: 'Ohrid — Early Bird (65 €)',
-    experience: 'Ohrid — Experience (85 €)',
-    xc: 'Ohrid — Cross country (from 95 €)',
+    early: 'City Flight Velestovo (79 €)',
+    experience: 'Ohrid — Experience (95 €)',
+    xc: 'Ohrid — Cross country (from 120 €)',
     krusevo: 'Krushevo — Standard (79 €)',
   }
-  return map[key] ?? 'Ohrid — Experience (85 €)'
+  return map[key] ?? 'Ohrid — Experience (95 €)'
 })
 </script>
 

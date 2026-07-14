@@ -12,16 +12,16 @@ const props = defineProps<{
 }>()
 
 const programsEn = [
-  'Ohrid — Early Bird (65 €)',
-  'Ohrid — Experience (85 €)',
-  'Ohrid — Cross country (from 95 €)',
+  'Ohrid — City Flight Velestovo (79 €)',
+  'Ohrid — Experience (95 €)',
+  'Ohrid — Cross country (from 120 €)',
   'Krushevo — Standard (79 €)',
 ]
 
 const programsMk = [
-  'Охрид — Early Bird (65 €)',
-  'Охрид — Experience (85 €)',
-  'Охрид — Cross country (од 95 €)',
+  'Охрид — Градски Лет Велестово (79 €)',
+  'Охрид — Experience (95 €)',
+  'Охрид — Cross country (од 120 €)',
   'Крушево — стандарден (79 €)',
 ]
 
